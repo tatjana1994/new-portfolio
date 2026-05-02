@@ -1,14 +1,47 @@
-export const focusItems = [
+import {
+  Code2,
+  Gauge,
+  Layers3,
+  LayoutDashboard,
+  ShoppingBag,
+  Sparkles,
+} from 'lucide-react';
+
+export const focusAreas = [
   {
-    title: 'Performance',
-    text: 'I focus on fast rendering, clean component structure, optimized assets, and frontend decisions that improve the overall experience for real users.',
+    title: 'Frontend Architecture',
+    description:
+      'Clean, scalable component systems built with React, Next.js and TypeScript.',
+    icon: Code2,
+  },
+  {
+    title: 'Performance & SEO',
+    description:
+      'SSR, optimized images, metadata, fast rendering and conversion-oriented pages.',
+    icon: Gauge,
   },
   {
     title: 'Headless CMS',
-    text: 'I have experience building dynamic websites powered by headless CMS solutions like WordPress and Contentful, with an emphasis on flexibility and maintainability.',
+    description:
+      'WordPress, WPGraphQL, Contentful and dynamic content structures.',
+    icon: Layers3,
   },
   {
     title: 'E-commerce UI',
-    text: 'I’ve worked on storefronts and product-focused interfaces where layout, responsiveness, and usability directly support business goals.',
+    description:
+      'Product cards, filters, categories, cart flows and polished storefront experiences.',
+    icon: ShoppingBag,
+  },
+  {
+    title: 'Dashboard Interfaces',
+    description:
+      'SaaS-style dashboards, sidebar systems, analytics cards and admin layouts.',
+    icon: LayoutDashboard,
+  },
+  {
+    title: 'Premium UI/UX',
+    description:
+      'Modern, polished interfaces with strong visual hierarchy and smooth interactions.',
+    icon: Sparkles,
   },
 ];

@@ -1,33 +1,95 @@
-import { focusItems } from '@/data/focus';
+'use client';
 
-export function FocusAreas() {
+import { motion } from 'framer-motion';
+import { focusAreas } from '@/data/focus';
+
+export default function FocusAreas() {
   return (
-    <section className='px-6 py-20 md:px-10 lg:px-16'>
-      <div className='mx-auto max-w-7xl'>
-        <div className='max-w-2xl'>
-          <p className='text-sm font-medium uppercase tracking-[0.22em] text-black/45'>
-            What I focus on
+    <section
+      id='focus'
+      className='relative overflow-hidden bg-[#FAF7F1] px-6 py-24'
+    >
+      {/* background glow */}
+      <div className='absolute left-[-180px] top-20 h-[420px] w-[420px] rounded-full bg-amber-200/40 blur-3xl' />
+      <div className='absolute right-[-160px] bottom-0 h-[380px] w-[380px] rounded-full bg-rose-200/40 blur-3xl' />
+
+      <div className='relative mx-auto max-w-7xl'>
+        {/* header */}
+        <div className='mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end'>
+          <div>
+            <p className='mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-700'>
+              Focus areas
+            </p>
+            <h2 className='max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-stone-950 md:text-6xl'>
+              What I actually specialize in building.
+            </h2>
+          </div>
+
+          <p className='max-w-md text-base leading-7 text-stone-600'>
+            I focus on real-world frontend systems that combine performance,
+            clean architecture and premium user experience.
           </p>
-          <h2 className='mt-4 text-3xl font-semibold tracking-tight text-[#1a1a1a] md:text-4xl'>
-            The kind of frontend work I enjoy the most.
-          </h2>
         </div>
 
-        <div className='mt-12 grid gap-6 md:grid-cols-3'>
-          {focusItems.map((item) => (
-            <article
-              key={item.title}
-              className='rounded-[28px] border border-black/10 bg-white p-7 shadow-[0_10px_30px_rgba(0,0,0,0.04)]'
-            >
-              <h3 className='text-xl font-semibold text-[#1a1a1a]'>
-                {item.title}
-              </h3>
-              <p className='mt-4 text-[15px] leading-7 text-black/65'>
-                {item.text}
-              </p>
-            </article>
-          ))}
+        {/* grid */}
+        <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
+          {focusAreas.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.5, delay: index * 0.06 }}
+                className='group relative overflow-hidden rounded-[2rem] border border-stone-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-stone-900/5'
+              >
+                {/* gradient hover glow */}
+                <div className='absolute inset-0 opacity-0 transition group-hover:opacity-100'>
+                  <div className='absolute inset-0 bg-gradient-to-br from-amber-100 via-white to-rose-100' />
+                </div>
+
+                <div className='relative'>
+                  {/* icon */}
+                  <div className='mb-6 inline-flex rounded-2xl bg-amber-100 p-3 text-amber-700 transition group-hover:bg-stone-950 group-hover:text-amber-300'>
+                    <Icon size={22} />
+                  </div>
+
+                  {/* title */}
+                  <div className='mb-3 flex items-center justify-between'>
+                    <h3 className='text-lg font-semibold text-stone-950'>
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  {/* description */}
+                  <p className='text-sm leading-7 text-stone-600'>
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
+
+        {/* bottom statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className='mt-16 rounded-[2rem] border border-stone-200 bg-white p-8 text-center shadow-sm'
+        >
+          <p className='text-sm font-semibold uppercase tracking-[0.2em] text-amber-700'>
+            Approach
+          </p>
+
+          <p className='mx-auto mt-4 max-w-2xl text-2xl font-semibold leading-snug tracking-[-0.025em] text-stone-950'>
+            I don’t just build UI — I build structured, scalable frontend
+            systems that are ready for real users and real business growth.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

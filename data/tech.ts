@@ -1,9 +1,14 @@
-export const techItems = [
+export const techStack = [
   'React',
   'Next.js',
   'TypeScript',
   'Tailwind CSS',
+  'WordPress Headless',
+  'WPGraphQL',
+  'Contentful',
+  'Supabase',
   'GraphQL',
-  'REST APIs',
-  'Headless CMS',
+  'REST API',
+  'Git',
+  'Figma',
 ];

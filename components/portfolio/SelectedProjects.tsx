@@ -1,113 +1,89 @@
 'use client';
 
-import { useCallback, useState } from 'react';
-import { ProjectCaseStudyModal } from './ProjectCaseStudyModal';
-import Image from 'next/image';
-import { projects } from '@/data/projects';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
+import { projects, type Project } from '@/data/projects';
+import ProjectCaseStudyModal from './ProjectCaseStudyModal';
 
-export type Project = {
-  name: string;
-  category: string;
-  description: string;
-  stack: string;
-  image?: string;
-  liveUrl?: string;
-  caseStudy: {
-    overview: string;
-    role: string;
-    challenge: string;
-    solution: string;
-    outcome: string;
-  };
-};
-
-export function SelectedProjects() {
+export default function SelectedProjects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const handleCloseModal = useCallback(() => {
-    setSelectedProject(null);
-  }, []);
 
   return (
-    <>
-      <section id='projects' className='px-6 py-20 md:px-10 lg:px-16 lg:py-24'>
-        <div className='mx-auto max-w-7xl'>
-          <div className='max-w-2xl'>
-            <p className='text-sm font-medium uppercase tracking-[0.22em] text-black/45'>
+    <section id='projects' className='bg-white px-6 py-24'>
+      <div className='mx-auto max-w-7xl'>
+        <div className='mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end'>
+          <div>
+            <p className='mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-700'>
               Selected work
             </p>
-            <h2 className='mt-4 text-3xl font-semibold tracking-tight text-[#1a1a1a] md:text-4xl'>
-              A few projects that reflect how I build.
+            <h2 className='max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-stone-950 md:text-6xl'>
+              Projects designed to look clean, work fast and feel premium.
             </h2>
           </div>
 
-          <div className='mt-12 space-y-8'>
-            {projects.map((project) => (
-              <article
-                key={project.name}
-                className='grid gap-8 rounded-[32px] border border-black/10 bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.04)] md:grid-cols-[0.95fr_1.05fr] md:p-8'
-              >
-                <div className='overflow-hidden flex align-center justify-center rounded-[24px] bg-[#ece7de]'>
-                  {project.image ? (
-                    <Image
-                      src={project.image}
-                      alt={project.name}
-                      width={300}
-                      height={300}
-                    />
-                  ) : (
-                    <div className='min-h-[260px]' />
-                  )}
-                </div>
-
-                <div className='flex flex-col justify-between'>
-                  <div>
-                    <p className='text-sm font-medium uppercase tracking-[0.18em] text-black/40'>
-                      {project.category}
-                    </p>
-
-                    <h3 className='mt-3 text-2xl font-semibold tracking-tight text-[#1a1a1a]'>
-                      {project.name}
-                    </h3>
-
-                    <p className='mt-5 text-base leading-8 text-black/65'>
-                      {project.description}
-                    </p>
-
-                    <p className='mt-5 text-sm leading-7 text-black/50'>
-                      {project.stack}
-                    </p>
-                  </div>
-
-                  <div className='mt-8 flex flex-wrap gap-3'>
-                    <a
-                      href={project.liveUrl || '#'}
-                      target='_blank'
-                      rel='noreferrer'
-                      className='inline-flex items-center justify-center rounded-xl bg-[#1f1f1f] px-4 py-2.5 text-sm font-medium text-white transition hover:opacity-90'
-                    >
-                      View Project
-                    </a>
-
-                    <button
-                      type='button'
-                      onClick={() => setSelectedProject(project)}
-                      className='inline-flex cursor-pointer items-center justify-center rounded-xl border border-black/15 px-4 py-2.5 text-sm font-medium text-[#1f1f1f] transition hover:bg-black/5'
-                    >
-                      Read Case Study
-                    </button>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          <p className='max-w-md text-base leading-7 text-stone-600'>
+            A mix of marketplace, SaaS, e-commerce, AI and client-facing
+            websites built with modern frontend architecture.
+          </p>
         </div>
-      </section>
+
+        <div className='grid gap-6 lg:grid-cols-2'>
+          {projects.map((project, index) => (
+            <motion.button
+              key={project.slug}
+              type='button'
+              onClick={() => setSelectedProject(project)}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.55, delay: index * 0.06 }}
+              className='group cursor-pointer relative overflow-hidden rounded-[2rem] border border-stone-200 bg-[#FAF7F1] p-5 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-stone-900/10'
+            >
+              <div
+                className={`absolute inset-x-0 top-0 h-36 bg-gradient-to-r ${project.accent} opacity-80`}
+              />
+
+              <div className='relative rounded-[1.5rem] border border-white/70 bg-white/80 p-6 backdrop-blur-xl'>
+                <div className='mb-16 flex items-start justify-between gap-4'>
+                  <div>
+                    <p className='text-sm font-medium text-stone-500'>
+                      {project.category} · {project.year}
+                    </p>
+                    <h3 className='mt-3 text-3xl font-semibold tracking-[-0.035em] text-stone-950'>
+                      {project.title}
+                    </h3>
+                  </div>
+
+                  <span className='rounded-full bg-stone-950 p-3 text-white transition group-hover:rotate-12 group-hover:bg-amber-600'>
+                    <ArrowUpRight size={20} />
+                  </span>
+                </div>
+
+                <p className='max-w-xl text-base leading-7 text-stone-600'>
+                  {project.description}
+                </p>
+
+                <div className='mt-7 flex flex-wrap gap-2'>
+                  {project.tech.slice(0, 5).map((tech) => (
+                    <span
+                      key={tech}
+                      className='rounded-full border border-stone-200 bg-white px-3 py-1.5 text-xs font-semibold text-stone-700'
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.button>
+          ))}
+        </div>
+      </div>
 
       <ProjectCaseStudyModal
-        isOpen={!!selectedProject}
-        onClose={handleCloseModal}
         project={selectedProject}
+        onClose={() => setSelectedProject(null)}
       />
-    </>
+    </section>
   );
 }

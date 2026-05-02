@@ -1,68 +1,129 @@
-export function Contact() {
+'use client';
+
+import { motion } from 'framer-motion';
+import { Mail, MapPin, Send } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+const contactLinks = [
+  {
+    label: 'Email',
+    value: 'devrnjat94@gmail.com',
+    href: 'mailto:devrnjat94@gmail.com',
+    icon: Mail,
+  },
+  {
+    label: 'LinkedIn',
+    value: 'tatjana-devrnja',
+    href: 'https://www.linkedin.com/in/tatjana-devrnja-6a35001b0/',
+    icon: FaLinkedin,
+  },
+  {
+    label: 'GitHub',
+    value: 'View projects',
+    href: 'https://github.com/tatjana1994',
+    icon: FaGithub,
+  },
+];
+
+export default function Contact() {
   return (
-    <section id='contact' className='px-6 py-20 md:px-10 lg:px-16 lg:py-24'>
-      <div className='mx-auto max-w-7xl rounded-[36px] border border-black/10 bg-white p-8 shadow-[0_20px_60px_rgba(0,0,0,0.06)] md:p-12'>
-        <div className='grid gap-10 lg:grid-cols-[0.9fr_1.1fr]'>
-          <div>
-            <p className='text-sm font-medium uppercase tracking-[0.22em] text-black/45'>
-              Contact
-            </p>
+    <section
+      id='contact'
+      className='relative overflow-hidden bg-white px-6 py-24'
+    >
+      <div className='absolute left-[-160px] top-20 h-[420px] w-[420px] rounded-full bg-amber-100 blur-3xl' />
+      <div className='absolute right-[-160px] bottom-0 h-[420px] w-[420px] rounded-full bg-rose-100 blur-3xl' />
 
-            <h2 className='mt-4 text-3xl font-semibold tracking-tight text-[#1a1a1a] md:text-4xl'>
-              Open to frontend opportunities and meaningful product work.
-            </h2>
+      <div className='relative mx-auto max-w-7xl'>
+        <motion.div
+          initial={{ opacity: 0, y: 26 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6 }}
+          className='overflow-hidden rounded-[2.5rem] border border-stone-200 bg-[#FAF7F1] p-4 shadow-2xl shadow-stone-900/5'
+        >
+          <div className='grid gap-5 lg:grid-cols-[1.05fr_0.95fr]'>
+            {/* Left */}
+            <div className='rounded-[2rem] bg-stone-950 p-8 text-white md:p-10'>
+              <div className='mb-20 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/75'>
+                <MapPin size={16} className='text-amber-300' />
+                Serbia · Available for remote work
+              </div>
 
-            <p className='mt-6 max-w-xl text-base leading-8 text-black/65'>
-              I’m currently interested in frontend roles where I can contribute
-              to modern web products, performance-focused interfaces, and
-              scalable frontend systems. If you think we’d be a good fit, I’d be
-              glad to connect.
-            </p>
+              <p className='mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300'>
+                Contact
+              </p>
 
-            <div className='mt-8 space-y-3 text-base text-black/70'>
-              <p>Email: devrnjat94@gmail.com</p>
-              <p>LinkedIn: linkedin.com/in/tatjana-devrnja-6a35001b0</p>
-              <p>Location: Serbia · Remote</p>
-            </div>
+              <h2 className='max-w-2xl text-4xl font-semibold tracking-[-0.045em] md:text-6xl'>
+                Let’s create something that looks beautiful and works
+                flawlessly.
+              </h2>
 
-            <div className='mt-8'>
+              <p className='mt-6 max-w-xl text-lg leading-8 text-white/65'>
+                Open for frontend roles, freelance projects and collaborations
+                focused on React, Next.js, e-commerce, dashboards and headless
+                CMS websites.
+              </p>
+
               <a
-                href='/Tatjana_Devrnja_CV.pdf'
-                download
-                className='inline-flex items-center justify-center rounded-2xl bg-[#1f1f1f] px-6 py-3.5 text-sm font-medium text-white transition hover:opacity-90'
+                href='mailto:devrnjat94@gmail.com'
+                className='mt-9 inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-semibold text-stone-950 transition hover:-translate-y-0.5 hover:bg-amber-300'
               >
-                Download CV
+                Send email
+                <Send size={17} />
               </a>
             </div>
+
+            {/* Right */}
+            <div className='grid gap-5'>
+              {contactLinks.map((item, index) => {
+                const Icon = item.icon;
+
+                return (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    initial={{ opacity: 0, y: 22 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-80px' }}
+                    transition={{ duration: 0.45, delay: index * 0.08 }}
+                    className='group flex items-center justify-between gap-5 rounded-[2rem] border border-stone-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-stone-900/5'
+                  >
+                    <div className='flex items-center gap-4'>
+                      <div className='rounded-2xl bg-amber-100 p-4 text-amber-700 transition group-hover:bg-stone-950 group-hover:text-amber-300'>
+                        <Icon size={22} />
+                      </div>
+
+                      <div>
+                        <p className='text-sm font-medium text-stone-500'>
+                          {item.label}
+                        </p>
+                        <p className='mt-1 font-semibold text-stone-950'>
+                          {item.value}
+                        </p>
+                      </div>
+                    </div>
+
+                    <span className='rounded-full bg-stone-100 px-4 py-2 text-xs font-semibold text-stone-600 transition group-hover:bg-amber-100 group-hover:text-amber-800'>
+                      Open
+                    </span>
+                  </motion.a>
+                );
+              })}
+
+              <div className='rounded-[2rem] border border-amber-200 bg-amber-50 p-7'>
+                <p className='text-sm font-semibold uppercase tracking-[0.2em] text-amber-800'>
+                  Best fit
+                </p>
+
+                <p className='mt-4 text-2xl font-semibold leading-snug tracking-[-0.025em] text-stone-950'>
+                  React / Next.js projects where UI quality, performance and
+                  clean implementation matter.
+                </p>
+              </div>
+            </div>
           </div>
-
-          <form className='grid gap-4'>
-            <input
-              type='text'
-              placeholder='Your name'
-              className='h-14 rounded-2xl border border-black/10 bg-[#faf8f4] px-4 outline-none transition placeholder:text-black/35 focus:border-black/25'
-            />
-
-            <input
-              type='email'
-              placeholder='Your email'
-              className='h-14 rounded-2xl border border-black/10 bg-[#faf8f4] px-4 outline-none transition placeholder:text-black/35 focus:border-black/25'
-            />
-
-            <textarea
-              placeholder='Tell me a bit about your project or role'
-              rows={6}
-              className='rounded-2xl border border-black/10 bg-[#faf8f4] px-4 py-4 outline-none transition placeholder:text-black/35 focus:border-black/25'
-            />
-
-            <button
-              type='submit'
-              className='mt-2 cursor-pointer inline-flex h-14 items-center justify-center rounded-2xl bg-[#1f1f1f] px-6 text-sm font-medium text-white transition hover:opacity-90'
-            >
-              Send message
-            </button>
-          </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
