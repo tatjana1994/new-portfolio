@@ -6,15 +6,15 @@ import { ArrowUpRight, Code2, Gauge, Layers3, Sparkles } from 'lucide-react';
 const highlights = [
   {
     label: '4+ years',
-    text: 'Frontend experience',
+    text: 'frontend experience',
   },
   {
     label: 'React / Next.js',
-    text: 'Main tech stack',
+    text: 'main tech stack',
   },
   {
     label: 'CMS & E-commerce',
-    text: 'Headless architecture',
+    text: 'headless architecture',
   },
 ];
 
@@ -22,19 +22,19 @@ const cards = [
   {
     title: 'Production-ready UI',
     description:
-      'I build clean, responsive interfaces that are easy to maintain and ready for real users.',
+      'I build clean, responsive interfaces that are ready for real users and easy to maintain at scale.',
     icon: Code2,
   },
   {
     title: 'Performance mindset',
     description:
-      'I care about fast rendering, optimized images, SSR, metadata and overall page quality.',
+      'Focused on fast rendering, optimized assets, SSR, metadata and overall product quality.',
     icon: Gauge,
   },
   {
     title: 'CMS flexibility',
     description:
-      'I work with WordPress Headless, WPGraphQL and Contentful to create dynamic content structures.',
+      'Experience with WordPress Headless, WPGraphQL and Contentful for scalable content-driven systems.',
     icon: Layers3,
   },
 ];
@@ -43,10 +43,11 @@ export default function About() {
   return (
     <section
       id='about'
-      className='relative overflow-hidden bg-white px-6 py-24'
+      className='relative overflow-hidden bg-[#fffdf8] px-6 py-24 text-stone-950 sm:py-32'
     >
-      <div className='absolute right-[-180px] top-20 h-[420px] w-[420px] rounded-full bg-amber-100 blur-3xl' />
-      <div className='absolute left-[-160px] bottom-10 h-[360px] w-[360px] rounded-full bg-rose-100 blur-3xl' />
+      <div className='absolute right-[-180px] top-20 h-[460px] w-[460px] rounded-full bg-amber-100 blur-3xl' />
+      <div className='absolute left-[-160px] bottom-10 h-[380px] w-[380px] rounded-full bg-rose-100 blur-3xl' />
+      <div className='absolute left-1/2 top-0 h-px w-full -translate-x-1/2 bg-gradient-to-r from-transparent via-stone-300 to-transparent' />
 
       <div className='relative mx-auto max-w-7xl'>
         <div className='grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start'>
@@ -55,28 +56,35 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6 }}
-            className='sticky top-28'
+            className='lg:sticky lg:top-28'
           >
-            <p className='mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-700'>
+            <p className='mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-amber-700'>
               About me
             </p>
 
-            <h2 className='text-4xl font-semibold tracking-[-0.045em] text-stone-950 md:text-6xl'>
-              Frontend developer focused on polished, scalable digital products.
+            <h2 className='max-w-2xl text-4xl font-semibold tracking-[-0.055em] md:text-6xl'>
+              Frontend developer focused on performance, UX and real product
+              impact.
             </h2>
 
-            <p className='mt-6 max-w-xl text-lg leading-8 text-stone-600'>
+            <p className='mt-7 max-w-xl text-lg leading-8 text-stone-600'>
               I’m Tatjana, a Frontend Engineer with 4+ years of experience
-              building high-performance web applications using React, Next.js
-              and TypeScript. My focus is on clean architecture, premium UI,
-              performance and real business usability.
+              building modern web applications using React, Next.js and
+              TypeScript.
             </p>
 
-            <div className='mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3'>
+            <p className='mt-4 max-w-xl text-base leading-8 text-stone-500'>
+              I enjoy working on products where clean architecture, strong UX
+              and performance directly influence business results. My experience
+              includes e-commerce platforms, dashboard systems and headless CMS
+              architectures.
+            </p>
+
+            <div className='mt-9 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3'>
               {highlights.map((item) => (
                 <div
                   key={item.label}
-                  className='rounded-3xl border border-stone-200 bg-[#FAF7F1] p-5'
+                  className='group rounded-3xl border border-stone-200 bg-white/80 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-amber-300 hover:bg-[#fff7e8] hover:shadow-xl hover:shadow-stone-900/5'
                 >
                   <p className='text-xl font-semibold tracking-tight text-stone-950'>
                     {item.label}
@@ -93,35 +101,38 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.6, delay: 0.08 }}
-              className='overflow-hidden rounded-[2rem] border border-stone-200 bg-[#FAF7F1] p-5 shadow-sm'
+              className='overflow-hidden rounded-[2.25rem] border border-stone-200 bg-[#f8f2e8] p-4 shadow-[0_24px_80px_rgba(28,25,23,0.08)]'
             >
-              <div className='rounded-[1.5rem] bg-stone-950 p-7 text-white'>
+              <div className='rounded-[1.8rem] bg-stone-950 p-7 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:p-8'>
                 <div className='mb-10 flex items-start justify-between gap-4'>
                   <div>
-                    <div className='mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm text-white/80'>
+                    <div className='mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-sm text-white/80'>
                       <Sparkles size={15} className='text-amber-300' />
                       What I bring
                     </div>
 
-                    <h3 className='max-w-2xl text-3xl font-semibold tracking-[-0.035em] md:text-4xl'>
+                    <h3 className='max-w-2xl text-3xl font-semibold tracking-[-0.04em] md:text-5xl'>
                       I combine strong frontend implementation with a refined
                       sense for visual quality.
                     </h3>
                   </div>
 
-                  <ArrowUpRight className='text-amber-300' size={28} />
+                  <ArrowUpRight
+                    className='hidden text-amber-300 sm:block'
+                    size={30}
+                  />
                 </div>
 
                 <p className='max-w-2xl text-base leading-8 text-white/65'>
-                  I enjoy turning Figma designs and business requirements into
-                  fast, responsive and maintainable products. I’m comfortable
-                  working with designers, backend developers and CMS-driven
-                  workflows.
+                  I enjoy turning Figma designs and product requirements into
+                  fast, responsive and maintainable interfaces. I work closely
+                  with designers and backend teams to build real-world,
+                  production-ready products.
                 </p>
               </div>
             </motion.div>
 
-            <div className='grid gap-5 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3'>
+            <div className='grid gap-3 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3'>
               {cards.map((card, index) => {
                 const Icon = card.icon;
 
@@ -132,9 +143,9 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-80px' }}
                     transition={{ duration: 0.5, delay: 0.12 + index * 0.07 }}
-                    className='group rounded-[2rem] border border-stone-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-stone-900/5'
+                    className='group rounded-[2rem] border border-stone-200 bg-white/90 p-6 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-stone-300 hover:shadow-[0_24px_70px_rgba(28,25,23,0.10)]'
                   >
-                    <div className='mb-6 inline-flex rounded-2xl bg-amber-100 p-3 text-amber-700 transition group-hover:bg-stone-950 group-hover:text-amber-300'>
+                    <div className='mb-6 inline-flex rounded-2xl bg-amber-100 p-3 text-amber-700 transition duration-300 group-hover:bg-stone-950 group-hover:text-amber-300'>
                       <Icon size={22} />
                     </div>
 
@@ -149,25 +160,28 @@ export default function About() {
                 );
               })}
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className='rounded-[2rem] border border-amber-200 bg-amber-50 p-7'
-            >
-              <p className='text-sm font-semibold uppercase tracking-[0.2em] text-amber-800'>
-                Main focus
-              </p>
-
-              <p className='mt-4 text-2xl font-semibold leading-snug tracking-[-0.025em] text-stone-950'>
-                Building interfaces that are not only visually polished, but
-                also fast, structured and practical for real business use.
-              </p>
-            </motion.div>
           </div>
         </div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className='group relative overflow-hidden mt-10 rounded-[2rem] border border-amber-200 bg-amber-50 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-900/5'
+        >
+          <div className='absolute right-[-80px] top-[-80px] h-44 w-44 rounded-full bg-amber-200/70 blur-3xl' />
+
+          <div className='relative'>
+            <p className='text-sm font-semibold uppercase tracking-[0.22em] text-amber-800'>
+              Main focus
+            </p>
+
+            <p className='mt-4 text-2xl font-semibold leading-snug tracking-[-0.03em] text-stone-950'>
+              Building interfaces that are not only visually polished, but also
+              fast, structured and practical for real business use.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

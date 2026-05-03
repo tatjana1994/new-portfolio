@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://portfolio-tatjana-devrnja.vercel.app/'),
+  metadataBase: new URL('https://tatjanadevrnja.com'),
 
   title: {
     default: 'Tatjana Devrnja | Frontend Engineer',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: 'Tatjana Devrnja | Frontend Engineer',
     description:
       'Building fast, scalable and premium web experiences using React, Next.js and TypeScript.',
-    url: 'https://portfolio-tatjana-devrnja.vercel.app/',
+    url: 'https://tatjanadevrnja.com',
     siteName: 'Tatjana Portfolio',
     images: [
       {
