@@ -13,8 +13,8 @@ const highlights = [
     text: 'main tech stack',
   },
   {
-    label: 'CMS & E-commerce',
-    text: 'headless architecture',
+    label: 'Scalable apps',
+    text: 'platforms, dashboards, CMS',
   },
 ];
 
@@ -22,13 +22,13 @@ const cards = [
   {
     title: 'Production-ready UI',
     description:
-      'I build clean, responsive interfaces that are ready for real users and easy to maintain at scale.',
+      'I build clean, responsive interfaces that are made for real users and easy to scale and maintain.',
     icon: Code2,
   },
   {
     title: 'Performance mindset',
     description:
-      'Focused on fast rendering, optimized assets, SSR, metadata and overall product quality.',
+      'Focused on fast rendering, optimized assets, SSR and overall application performance.',
     icon: Gauge,
   },
   {
@@ -63,8 +63,8 @@ export default function About() {
             </p>
 
             <h2 className='max-w-2xl text-4xl font-semibold tracking-[-0.055em] md:text-6xl'>
-              Frontend developer focused on performance, UX and real product
-              impact.
+              Frontend engineer focused on performance, UX and building real
+              products.
             </h2>
 
             <p className='mt-7 max-w-xl text-lg leading-8 text-stone-600'>
@@ -74,10 +74,10 @@ export default function About() {
             </p>
 
             <p className='mt-4 max-w-xl text-base leading-8 text-stone-500'>
-              I enjoy working on products where clean architecture, strong UX
-              and performance directly influence business results. My experience
-              includes e-commerce platforms, dashboard systems and headless CMS
-              architectures.
+              I work on products where performance, usability and clean
+              architecture directly shape the user experience. My focus is on
+              building scalable applications, dashboards and platforms that are
+              ready for real users and real business needs.
             </p>
 
             <div className='mt-9 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3'>
@@ -112,8 +112,8 @@ export default function About() {
                     </div>
 
                     <h3 className='max-w-2xl text-3xl font-semibold tracking-[-0.04em] md:text-5xl'>
-                      I combine strong frontend implementation with a refined
-                      sense for visual quality.
+                      I build scalable frontend systems with a strong focus on
+                      performance and user experience.
                     </h3>
                   </div>
 
@@ -124,10 +124,9 @@ export default function About() {
                 </div>
 
                 <p className='max-w-2xl text-base leading-8 text-white/65'>
-                  I enjoy turning Figma designs and product requirements into
-                  fast, responsive and maintainable interfaces. I work closely
-                  with designers and backend teams to build real-world,
-                  production-ready products.
+                  I turn product ideas and designs into fast, responsive and
+                  maintainable applications. I work closely with teams to ship
+                  reliable, production-ready solutions that scale.
                 </p>
               </div>
             </motion.div>
@@ -162,12 +161,13 @@ export default function About() {
             </div>
           </div>
         </div>
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className='group relative overflow-hidden mt-10 rounded-[2rem] border border-amber-200 bg-amber-50 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-900/5'
+          className='group relative mt-10 overflow-hidden rounded-[2rem] border border-amber-200 bg-amber-50 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-900/5'
         >
           <div className='absolute right-[-80px] top-[-80px] h-44 w-44 rounded-full bg-amber-200/70 blur-3xl' />
 
@@ -177,8 +177,8 @@ export default function About() {
             </p>
 
             <p className='mt-4 text-2xl font-semibold leading-snug tracking-[-0.03em] text-stone-950'>
-              Building interfaces that are not only visually polished, but also
-              fast, structured and practical for real business use.
+              Building scalable, high-performance interfaces that are
+              structured, maintainable and ready for real-world use.
             </p>
           </div>
         </motion.div>

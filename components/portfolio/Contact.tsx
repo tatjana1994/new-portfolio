@@ -73,7 +73,6 @@ export default function Contact() {
               </a>
             </div>
 
-            {/* Right */}
             <div className='grid gap-5'>
               {contactLinks.map((item, index) => {
                 const Icon = item.icon;

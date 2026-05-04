@@ -24,13 +24,15 @@ export default function Hero() {
           </div>
 
           <h1 className='max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-stone-950 md:text-7xl'>
-            Building polished interfaces that feel fast, premium and effortless.
+            Building fast, scalable digital products with a focus on clean
+            architecture and high-quality user experiences.
           </h1>
 
           <p className='mt-7 max-w-2xl text-lg leading-8 text-stone-600 md:text-xl'>
-            I create modern web applications, e-commerce experiences and
-            headless CMS websites with a strong focus on performance, clean
-            architecture and refined UI.
+            I design and build modern web applications — from platforms and
+            dashboards to content-driven websites — using React, Next.js and
+            TypeScript. Focused on performance, scalability and shipping
+            production-ready products.
           </p>
 
           <div className='mt-9 flex flex-col gap-3 sm:flex-row'>
@@ -103,10 +105,10 @@ export default function Hero() {
 
               <div className='grid gap-3'>
                 {[
-                  'Next.js Apps',
+                  'Web Applications',
+                  'Platforms & Dashboards',
                   'Headless CMS',
-                  'E-commerce UI',
-                  'Premium Dashboards',
+                  'Scalable Frontend',
                 ].map((item, index) => (
                   <motion.div
                     key={item}

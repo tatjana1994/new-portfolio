@@ -75,9 +75,7 @@ export default function ProjectCaseStudyModal({ project, onClose }: Props) {
                       <a
                         href={project.liveUrl}
                         target='_blank'
-                        className='inline-flex items-center gap-2 rounded-full bg-stone-950 px-5 py-3 text-sm font-semibold text-white
-  transition-all duration-300
-  hover:bg-amber-600 hover:scale-105 hover:shadow-lg'
+                        className='inline-flex items-center gap-2 rounded-full bg-stone-950 px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-amber-600 hover:scale-105 hover:shadow-lg'
                       >
                         Live project
                         <ExternalLink
@@ -91,9 +89,7 @@ export default function ProjectCaseStudyModal({ project, onClose }: Props) {
                       <a
                         href={project.githubUrl}
                         target='_blank'
-                        className='group inline-flex items-center gap-2 rounded-full border border-stone-200 px-5 py-3 text-sm font-semibold text-stone-900
-  transition-all duration-300
-  hover:border-stone-900 hover:bg-stone-900 hover:text-white hover:shadow-md'
+                        className='group inline-flex items-center gap-2 rounded-full border border-stone-200 px-5 py-3 text-sm font-semibold text-stone-900 transition-all duration-300 hover:border-stone-900 hover:bg-stone-900 hover:text-white hover:shadow-md'
                       >
                         GitHub
                         <FaGithub

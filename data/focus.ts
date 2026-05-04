@@ -3,7 +3,7 @@ import {
   Gauge,
   Layers3,
   LayoutDashboard,
-  ShoppingBag,
+  MousePointerClick,
   Sparkles,
 } from 'lucide-react';
 
@@ -11,37 +11,37 @@ export const focusAreas = [
   {
     title: 'Frontend Architecture',
     description:
-      'Clean, scalable component systems built with React, Next.js and TypeScript.',
+      'Reusable component systems, clean structure and scalable React / Next.js codebases.',
     icon: Code2,
   },
   {
     title: 'Performance & SEO',
     description:
-      'SSR, optimized images, metadata, fast rendering and conversion-oriented pages.',
+      'Fast rendering, optimized images, metadata, semantic structure and production-ready pages.',
     icon: Gauge,
   },
   {
     title: 'Headless CMS',
     description:
-      'WordPress, WPGraphQL, Contentful and dynamic content structures.',
+      'Content-driven websites using WordPress Headless, WPGraphQL and Contentful.',
     icon: Layers3,
   },
   {
-    title: 'E-commerce UI',
+    title: 'Product Interfaces',
     description:
-      'Product cards, filters, categories, cart flows and polished storefront experiences.',
-    icon: ShoppingBag,
+      'User-facing flows, forms, filters, listings, detail pages and interactive product features.',
+    icon: MousePointerClick,
   },
   {
-    title: 'Dashboard Interfaces',
+    title: 'Dashboard Systems',
     description:
-      'SaaS-style dashboards, sidebar systems, analytics cards and admin layouts.',
+      'Admin panels, client portals, sidebar layouts, analytics cards and structured app screens.',
     icon: LayoutDashboard,
   },
   {
-    title: 'Premium UI/UX',
+    title: 'Polished UI/UX',
     description:
-      'Modern, polished interfaces with strong visual hierarchy and smooth interactions.',
+      'Clean visual hierarchy, responsive layouts, smooth interactions and refined interface details.',
     icon: Sparkles,
   },
 ];

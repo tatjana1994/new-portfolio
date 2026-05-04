@@ -7,7 +7,6 @@ import { Mail } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className='relative overflow-hidden bg-[#FAF7F1] px-6 pt-24 pb-10 text-stone-700'>
-      {/* Background glow */}
       <div className='absolute left-1/2 top-0 h-[400px] w-[800px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,#F3C77C_0%,rgba(243,199,124,0.25)_40%,transparent_70%)] blur-3xl' />
 
       <div className='relative mx-auto max-w-7xl'>
@@ -17,7 +16,6 @@ export default function Footer() {
           viewport={{ once: true }}
           className='rounded-[2rem] border border-stone-200 bg-white p-10 shadow-xl shadow-stone-900/5'
         >
-          {/* CTA */}
           <div className='flex flex-col gap-6 md:flex-row md:items-center md:justify-between'>
             <div>
               <h3 className='text-3xl font-semibold tracking-[-0.03em] text-stone-950 md:text-4xl'>
@@ -36,10 +34,8 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Divider */}
           <div className='my-10 h-px bg-stone-200' />
 
-          {/* Bottom */}
           <div className='flex flex-col gap-6 md:flex-row md:items-center md:justify-between'>
             <p className='text-sm text-stone-500'>
               © {new Date().getFullYear()} Tatjana Devrnja. All rights reserved.

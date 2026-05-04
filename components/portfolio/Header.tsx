@@ -33,7 +33,6 @@ export default function Header() {
       }`}
     >
       <div className='mx-auto flex h-20 max-w-7xl items-center justify-between'>
-        {/* Logo */}
         <a
           href='#'
           className='text-lg font-semibold tracking-tight text-stone-950'
@@ -41,7 +40,6 @@ export default function Header() {
           Tatjana<span className='text-amber-600'>.</span>
         </a>
 
-        {/* Nav */}
         <nav className='hidden items-center gap-8 md:flex'>
           {navItems.map((item) => (
             <a
@@ -54,7 +52,6 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Actions */}
         <div className='flex items-center gap-3'>
           <a
             href='https://github.com/tatjana1994'
