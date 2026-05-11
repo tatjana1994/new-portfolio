@@ -1,5 +1,18 @@
 export const experience = [
   {
+    company: 'Voyin Inc.',
+    role: 'Frontend Developer',
+    period: 'Feb 2026 — May 2026',
+    description:
+      'Developed and maintained a modern cybersecurity company website using React, Next.js, Tailwind CSS and WPGraphQL.',
+    points: [
+      'SEO-optimized responsive UI',
+      'Headless WordPress CMS integration',
+      'Reusable frontend component architecture',
+      'Frontend performance optimization',
+    ],
+  },
+  {
     company: 'Montenix',
     role: 'Frontend Developer',
     period: 'Oct 2025 — Jan 2026',
@@ -12,6 +25,7 @@ export const experience = [
       'Improved layout consistency and user experience',
     ],
   },
+
   {
     company: 'Forga',
     role: 'Frontend Developer',
